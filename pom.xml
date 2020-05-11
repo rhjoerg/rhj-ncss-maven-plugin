@@ -36,12 +36,78 @@
 			<version>3.6.0</version>
 		</dependency>
 		
+		<!-- TEST DEPENDENCIES -->
+		
 		<dependency>
-			<groupId>org.apache.maven</groupId>
-			<artifactId>maven-project</artifactId>
-			<version>2.2.1</version>
+			<groupId>ch.rhj</groupId>
+			<artifactId>rhj-utils</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+			<scope>test</scope>
 		</dependency>
 	
+		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-compat -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-compat</artifactId>
+			<version>3.6.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-embedder -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-embedder</artifactId>
+			<version>3.6.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.resolver/maven-resolver-transport-classpath -->
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-classpath</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.resolver/maven-resolver-connector-basic 
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-connector-basic</artifactId>
+			<version>1.4.2</version>
+			<scope>test</scope>
+		</dependency>
+		-->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.resolver/maven-resolver-transport-wagon 
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-wagon</artifactId>
+			<version>1.4.2</version>
+			<scope>test</scope>
+		</dependency>
+		-->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.wagon/wagon-file -->
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-file</artifactId>
+			<version>3.4.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.plexus/plexus-classworlds -->
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-classworlds</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
 	</dependencies>
 	
 	<build>
@@ -60,7 +126,7 @@
 									<pluginExecutionFilter>
 										<groupId>org.apache.maven.plugins</groupId>
 										<artifactId>maven-plugin-plugin</artifactId>
-										<versionRange>[3.2,)</versionRange>
+										<versionRange>[3.6,)</versionRange>
 										<goals>
 											<goal>descriptor</goal>
 										</goals>

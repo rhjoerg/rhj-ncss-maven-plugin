@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>ch.rhj</groupId>
+	<artifactId>rhj-hello</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	
+	<name>RHJ Hello</name>
+	<description>RHJ Hello</description>
+	
+	<properties>
+	
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		
+	</properties>
+	
+	<build>
+	
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>ch.rhj</groupId>
+					<artifactId>rhj-ncss-maven-plugin</artifactId>
+					<version>20200508.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	
+		<plugins>
+			<plugin>
+				<groupId>ch.rhj</groupId>
+				<artifactId>rhj-ncss-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>rhj-ncss</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		
+	</build>
+	
+</project>
