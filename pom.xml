@@ -75,32 +75,6 @@
 			<version>1.4.2</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.resolver/maven-resolver-connector-basic 
-		<dependency>
-			<groupId>org.apache.maven.resolver</groupId>
-			<artifactId>maven-resolver-connector-basic</artifactId>
-			<version>1.4.2</version>
-			<scope>test</scope>
-		</dependency>
-		-->
-
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.resolver/maven-resolver-transport-wagon 
-		<dependency>
-			<groupId>org.apache.maven.resolver</groupId>
-			<artifactId>maven-resolver-transport-wagon</artifactId>
-			<version>1.4.2</version>
-			<scope>test</scope>
-		</dependency>
-		-->
-
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.wagon/wagon-file -->
-		<dependency>
-			<groupId>org.apache.maven.wagon</groupId>
-			<artifactId>wagon-file</artifactId>
-			<version>3.4.0</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.codehaus.plexus/plexus-classworlds -->
 		<dependency>
 			<groupId>org.codehaus.plexus</groupId>
@@ -111,58 +85,18 @@
 	</dependencies>
 	
 	<build>
+	
 		<pluginManagement>
 			<plugins>
 			
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.maven.plugins</groupId>
-										<artifactId>maven-plugin-plugin</artifactId>
-										<versionRange>[3.6,)</versionRange>
-										<goals>
-											<goal>descriptor</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute>
-											<runOnIncremental>true</runOnIncremental>
-										</execute>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-plugin-plugin</artifactId>
 					<version>3.6.0</version>
-					<configuration>
-						<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
-					</configuration>
-					<executions>
-						<execution>
-							<id>mojo-descriptor</id>
-							<phase>process-classes</phase>
-							<goals>
-								<goal>descriptor</goal>
-							</goals>
-						</execution>
-					</executions>
 				</plugin>
 			
 			</plugins>
 		</pluginManagement>
-		
 	</build>
 	
 </project>
