@@ -8,7 +8,7 @@
 	<parent>
 	    <groupId>ch.rhj</groupId>
 	    <artifactId>rhj-parent</artifactId>
-	    <version>20200508.0</version>
+	    <version>20200515.0</version>
 	</parent>
 	
 	<artifactId>rhj-ncss-maven-plugin</artifactId>
@@ -27,7 +27,6 @@
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
-			<version>1</version>
 		</dependency>
 		
 		<dependency>
@@ -60,7 +59,6 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
 			<scope>test</scope>
 		</dependency>
 	
@@ -81,52 +79,5 @@
 		</dependency>
 
 	</dependencies>
-	
-	<build>
-	
-		<resources>
-			<resource>
-				<directory>${project.basedir}</directory>
-				<includes>
-					<include>LICENSE</include>
-				</includes>
-			</resource>
-		</resources>
-		
-		<pluginManagement>
-			<plugins>
-			
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-plugin-plugin</artifactId>
-					<version>3.6.0</version>
-				</plugin>
-
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.maven.plugins</groupId>
-										<artifactId>maven-plugin-plugin</artifactId>
-										<versionRange>[3.6,)</versionRange>
-										<goals><goal>descriptor</goal></goals>
-									</pluginExecutionFilter>
-									<action><ignore /></action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-				
-			</plugins>
-		</pluginManagement>
-
-	</build>
 	
 </project>
