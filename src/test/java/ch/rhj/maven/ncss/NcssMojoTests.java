@@ -16,7 +16,7 @@ import ch.rhj.util.io.IO;
 import ch.rhj.util.io.Zip;
 import ch.rhj.util.test.TestPaths;
 
-public class NCSSMojoTests implements TestPaths {
+public class NcssMojoTests implements TestPaths {
 
 	// make someone happy
 	@SuppressWarnings("unused")
