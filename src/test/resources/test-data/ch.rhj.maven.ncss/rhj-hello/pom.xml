@@ -50,4 +50,12 @@
 		
 	</build>
 	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>tmp</id>
+			<name>tmp</name>
+			<url>file://${user.home}/.m2/tmprepository</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
 </project>

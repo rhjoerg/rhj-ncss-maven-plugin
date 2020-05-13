@@ -3,7 +3,7 @@
     <booleanAttribute key="org.eclipse.ant.ui.DEFAULT_VM_INSTALL" value="true"/>
     <stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${workspace}"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/rhj-ncss-maven-plugin/.ant/build.xml"/>
+        <listEntry value="/rhj-ncss-maven-plugin/build.xml"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
@@ -14,8 +14,7 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ant.internal.launching.remote.InternalAntRunner"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="rhj-ncss-maven-plugin"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
-    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_TARGETS" value="default,"/>
-    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:/rhj-ncss-maven-plugin/.ant/build.xml}"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:/rhj-ncss-maven-plugin/build.xml}"/>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/rhj-ncss-maven-plugin}"/>
     <stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
 </launchConfiguration>
