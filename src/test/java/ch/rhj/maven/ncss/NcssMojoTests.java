@@ -57,8 +57,11 @@ public class NcssMojoTests implements TestPaths {
 	@Test
 	public void testCompile() throws Exception {
 
+		String[] preparationArgs = { //
+				"plugin:descriptor", "plugin:addPluginArtifactMetadata", //
+				"jar:jar", "install:install" };
+
 		MavenCli mavenCli = new MavenCli();
-		String[] preparationArgs = { "plugin:descriptor", "plugin:addPluginArtifactMetadata", "jar:jar", "install:install" };
 		String[] compileArgs = { "compile" };
 		String workingDirectory;
 		int result;
