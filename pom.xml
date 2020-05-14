@@ -8,7 +8,7 @@
 	<parent>
 	    <groupId>ch.rhj</groupId>
 	    <artifactId>rhj-parent</artifactId>
-	    <version>20200515.0</version>
+	    <version>1.0.0</version>
 	</parent>
 	
 	<artifactId>rhj-ncss-maven-plugin</artifactId>
