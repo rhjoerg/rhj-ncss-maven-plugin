@@ -1,12 +1,9 @@
 package ch.rhj.maven.ncss;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.util.stream.Collectors.toList;
 
 import java.nio.charset.Charset;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -25,62 +22,44 @@ import ch.rhj.util.io.IO;
 @Mojo(name = "ncss", defaultPhase = LifecyclePhase.COMPILE)
 public class NcssMojo extends AbstractMojo {
 
+	private final Charset charset;
+	private final Path basePath;
+	private final Path targetPath;
+	private final String outputName;
+	private final Path outputPath;
+
 	@Inject
-	private MavenProject project;
+	public NcssMojo(MavenProject project) {
 
-	private Charset charset() {
+		this.charset = Charset.forName(project.getProperties().getProperty("project.build.sourceEncoding", "UTF-8"));
+		this.basePath = project.getBasedir().toPath();
+		this.targetPath = this.basePath.resolve("target");
+		this.outputName = project.getArtifactId() + "-ncss.json";
+		this.outputPath = targetPath.resolve(outputName);
+	}
 
-		String charsetName = project.getProperties().getProperty("project.build.sourceEncoding", "UTF-8");
+	private int count(NcssCounter counter, String ext) {
 
-		return Charset.forName(charsetName);
+		return IO.findFilesWithExtension(basePath, false, ext, Integer.MAX_VALUE) //
+				.filter(p -> !p.startsWith(targetPath)) //
+				.mapToInt(p -> counter.count(p, charset)) //
+				.sum();
+	}
+
+	private int count(NcssCounter counter) {
+
+		return counter.extensions().mapToInt(ext -> count(counter, ext)).sum();
 	}
 
 	@Override
 	public void execute() throws MojoExecutionException, MojoFailureException {
 
-		Charset charset = charset();
-
-		NcssCounter.counters();
-
-		List<String> rootNames = project.getCompileSourceRoots();
-		List<Path> rootPaths = rootNames.stream().map(n -> Paths.get(n)).collect(toList());
-		int count = 0;
-
-		for (Path start : rootPaths) {
-
-			count += IO.findFilesWithExtension(start, false, "java", Integer.MAX_VALUE) //
-					.mapToInt(p -> ncss(p, charset)).sum();
-		}
+		int count = NcssCounters.counters().mapToInt(this::count).sum();
 
 		NcssData data = new NcssData(count);
 		ObjectMapper mapper = new ObjectMapper();
 		String json = Ex.supply(() -> mapper.writeValueAsString(data));
 
-		String outputName = project.getArtifactId() + "-ncss.json";
-		Path output = project.getBasedir().toPath().resolve("target").resolve(outputName);
-
-		IO.write(json.getBytes(UTF_8), output, true);
-	}
-
-	private int ncss(Path path, Charset charset) {
-
-		char[] chars = { ';', '{' };
-		String source = IO.readString(path, charset);
-		int count = 0;
-		int start = 0;
-		int pos = -1;
-
-		for (char c : chars) {
-
-			start = 0;
-
-			while ((pos = source.indexOf(c, start)) >= 0) {
-
-				++count;
-				start = pos + 1;
-			}
-		}
-
-		return count;
+		IO.write(json.getBytes(UTF_8), outputPath, true);
 	}
 }

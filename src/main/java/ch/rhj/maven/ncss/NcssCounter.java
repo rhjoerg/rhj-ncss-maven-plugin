@@ -2,7 +2,6 @@ package ch.rhj.maven.ncss;
 
 import java.nio.charset.Charset;
 import java.nio.file.Path;
-import java.util.ServiceLoader;
 import java.util.stream.Stream;
 
 public interface NcssCounter {
@@ -24,10 +23,5 @@ public interface NcssCounter {
 		}
 
 		return count;
-	}
-
-	public static Stream<NcssCounter> counters() {
-
-		return ServiceLoader.load(NcssCounter.class).stream().map(p -> p.get());
 	}
 }

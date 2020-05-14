@@ -29,7 +29,7 @@
 				<plugin>
 					<groupId>ch.rhj</groupId>
 					<artifactId>rhj-ncss-maven-plugin</artifactId>
-					<version>20200515.0</version>
+					<version>1.0.0</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>

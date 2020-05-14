@@ -4,8 +4,11 @@ import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
+import org.codehaus.plexus.component.annotations.Component;
+
 import ch.rhj.util.io.IO;
 
+@Component(role = NcssCounter.class)
 public class JavaNcssCounter implements NcssCounter {
 
 	private final static String[] EXTENSIONS = { ".java" };
