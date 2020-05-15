@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import ch.qos.logback.classic.Logger;
 import ch.rhj.util.config.Sys;
 import ch.rhj.util.io.IO;
-import ch.rhj.util.io.Zip;
+import ch.rhj.util.io.compression.Zip;
 import ch.rhj.util.test.TestPaths;
 
 public class NcssMojoTests implements TestPaths {
